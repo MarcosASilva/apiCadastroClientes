@@ -1,4 +1,4 @@
- 
+const cors = require('cors'); 
 const express = require("express")
 const bodyParser = require("body-parser")
 const routes = require('./routes')
@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 
 const app = express()
-
+app.use(cors());
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({
